@@ -3,8 +3,8 @@ import greedy.greedy;
 
 public class laba2 {
     public static void main(String[] args) {
-        int[][] mass = { {5, 8, 6, 1, 9, 5, 2}, {6, 2, 4, 6, 5, 7, 3} };
-        int M = 10;
-        
+        int[][] mass = { {30, 15, 50}, {90, 60, 100} };
+        int M = 80;
+        System.out.println(greedy.greedy(mass, M));
     }
 }
