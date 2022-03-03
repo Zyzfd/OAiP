@@ -7,10 +7,10 @@ public class laba2 {
         int[][] mass_1 = { {30, 15, 50}, {90, 60, 100} };
         int M = 80;
 
-        System.out.println(greedy.greedy(mass_1, M));
+        System.out.printf("\nОтвет: %5d\n", greedy.greedy(5));
 
         int[] mass_2 = { 10, 100, 5, 50, 25, 30, 1 };
-        System.out.println(dinam.dinam(mass_2));
+        System.out.printf("\nКоличество операций: %d\n",dinam.dinam(mass_2));
 
         int[] mass_3 = { 2, 4, 23, 1, 0, 45, 100, 34, 2 };
 

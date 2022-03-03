@@ -1,4 +1,5 @@
 package greedy;
+import java.util.Random;
 
 public class greedy {
 
@@ -25,7 +26,20 @@ public class greedy {
         }
     }
 
-    public static int greedy(int[][] mass, int M) {
+    public static int greedy(int n) {
+        Random rand = new Random();
+        int[][] mass = new int[2][n];
+        for (int  i = 0; i < 2; i++) {
+            for (int j = 0; j < n; j++) {
+                mass[i][j] = rand.nextInt(1000);
+                System.out.printf("%5d", mass[i][j]);
+            }
+            System.out.printf("\n");
+        }
+        int M = rand.nextInt(1000);
+        System.out.printf("М: %d",M);
+
+        
         int[] del = new int[mass[0].length];
 
         for (int i = 0; i < del.length; i++) {
@@ -36,9 +50,13 @@ public class greedy {
 
         int sum = 0;
         int i = 0;
-        while (sum < M) {
-            sum += mass[1][i];
-            i++;
+        while (true) {
+            if (mass[1][i] + sum < M) {
+                sum += mass[1][i];
+                i++;
+            } else {
+                break;
+            }
         }
 
         return sum;

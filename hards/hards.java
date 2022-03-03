@@ -1,5 +1,5 @@
 package hards;
-
+// TODO зарандомить, вычислить время выполнения и затем вычислить среднее время из нескольких прогонов
 public class hards {
 
     public static void swap(int[] mass, int ind1, int ind2) {
