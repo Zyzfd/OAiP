@@ -19,9 +19,13 @@ public class laba2 {
             System.out.printf("%3d", one[i]);
         }
 
+        System.out.printf("\n");
+
         int[] two = hards.fastSort(mass_3);
         for (int i = 0; i < one.length; i++) {
             System.out.printf("%3d", two[i]);
         }
+
+        System.out.printf("\nИндекс элемента: %d", hards.linear_search(mass_3, 23));
     }
 }

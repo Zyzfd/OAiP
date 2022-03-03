@@ -40,9 +40,6 @@ public class greedy {
             sum += mass[1][i];
             i++;
         }
-        // if (sum > M) {
-        //     sum -= mass[1][i - 1];
-        // }
 
         return sum;
     }

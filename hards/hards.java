@@ -34,12 +34,12 @@ public class hards {
 
 
 
-    public static int[] fastSort(int[] array) { // O(n*log(n))
+    public static int[] fastSort(int[] array) {
         return recursionFastSort(array, 0, array.length - 1);
 
     }
 
-    public static int[] recursionFastSort(int[] array, int min, int max) {
+    public static int[] recursionFastSort(int[] array, int min, int max) { // O(n*log(n))
         if (array.length == 0) {
             return array;
         }
