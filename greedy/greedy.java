@@ -43,7 +43,12 @@ public class greedy {
         int[] del = new int[mass[0].length];
 
         for (int i = 0; i < del.length; i++) {
-            del[i] = mass[1][i] / mass[0][i];
+            if (mass[0][1] != 0) {
+                del[i] = mass[1][i] / mass[0][i];
+            } else {
+                del[i] = 0;
+            }
+           
         }
         
         bubble(del, mass);
