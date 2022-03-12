@@ -1,6 +1,7 @@
 import greedy.greedy;
 import dinam.dinam;
 import hards.hards;
+import java.util.Random;
 
 public class laba2 {
     public static void main(String[] args) {
@@ -12,20 +13,62 @@ public class laba2 {
         int[] mass_2 = { 10, 100, 5, 50, 25, 30, 1 };
         System.out.printf("\nКоличество операций: %d\n",dinam.dinam(mass_2));
 
-        int[] mass_3 = { 2, 4, 23, 1, 0, 45, 100, 34, 2 };
-
-        int[] one = hards.bubble(mass_3);
-        for (int i = 0; i < one.length; i++) {
-            System.out.printf("%3d", one[i]);
+        int[] mass_3 = new int[100000];
+        int[] temp_mass = new int[100000];
+        Random rand = new Random();
+        for (int i = 0; i < mass_3.length; i++) {
+            mass_3[i] = rand.nextInt(1000);
+            temp_mass[i] = mass_3[i];
         }
+
+        long sumtime = 0;
+        for (int i = 0; i < 5; i++) {
+            long time0 = System.currentTimeMillis();
+            int[] one = hards.bubble(mass_3);
+            long time = System.currentTimeMillis() - time0;
+            System.out.printf("\nВремя выполнения: %d", time);
+            for (int j = 0; j < temp_mass.length; j++) {
+                mass_3[j] = temp_mass[j];
+            }
+            sumtime += time;
+        }
+        System.out.printf("\nСреднее время выполнения: %d\n", sumtime/5);
+        
+        // for (int i = 0; i < one.length; i++) {
+        //     System.out.printf("%4d", one[i]);
+        // }
 
         System.out.printf("\n");
 
-        int[] two = hards.fastSort(mass_3);
-        for (int i = 0; i < one.length; i++) {
-            System.out.printf("%3d", two[i]);
+        sumtime = 0;
+        for (int i = 0; i < 5; i++) {
+            long time0 = System.currentTimeMillis();
+            int[] two = hards.fastSort(mass_3);
+            long time = System.currentTimeMillis() - time0;
+            System.out.printf("\nВремя выполнения: %d", time);
+            for (int j = 0; j < temp_mass.length; j++) {
+                mass_3[j] = temp_mass[j];
+            }
+            sumtime += time;
         }
+        System.out.printf("\nСреднее время выполнения: %d\n", sumtime/5);
+        
+        // for (int i = 0; i < one.length; i++) {
+        //     System.out.printf("%4d", two[i]);
+        // }
 
-        System.out.printf("\nИндекс элемента: %d", hards.linear_search(mass_3, 23));
+        sumtime = 0;
+        for (int i = 0; i < 5; i++) {
+            long time0 = System.currentTimeMillis();
+            System.out.printf("\nИндекс элемента: %d", hards.linear_search(mass_3, 23));
+            long time = System.currentTimeMillis() - time0;
+            System.out.printf("\nВремя выполнения: %d", time);
+            for (int j = 0; j < temp_mass.length; j++) {
+                mass_3[j] = temp_mass[j];
+            }
+            sumtime += time;
+        }
+        System.out.printf("\nСреднее время выполнения: %d\n", sumtime/5);
+        
     }
 }

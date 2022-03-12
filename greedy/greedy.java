@@ -50,7 +50,7 @@ public class greedy {
 
         int sum = 0;
         int i = 0;
-        while (true) {
+        while (i < mass[1].length) {
             if (mass[1][i] + sum < M) {
                 sum += mass[1][i];
                 i++;
