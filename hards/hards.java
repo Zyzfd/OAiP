@@ -66,7 +66,7 @@ public class hards {
                 j--;
             }
         }
- 
+        
         if (min < j) {
             recursionFastSort(array, min, j);
         }
